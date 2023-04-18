@@ -1,15 +1,17 @@
-
-name: AzureLoginSample
-
+name: First Workflow
+on: push
 jobs:
-
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-    
-    - uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-    
-    - run: |
-        az webapp list --query "[?state=='Running']"
+    - name: test
+      run: echo "Hello, world."
+---
+name: Second Workflow
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: test
+      run: echo "Hello, again."
