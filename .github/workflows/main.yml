@@ -6,12 +6,4 @@ jobs:
     steps:
     - name: test
       run: echo "Hello, world."
----
-name: Second Workflow
-on: push
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - name: test
-      run: echo "Hello, again."
+
